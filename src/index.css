@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --color-glass-white: rgba(255, 255, 255, 0.1);
+  --color-glass-border: rgba(255, 255, 255, 0.15);
+}
+
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-100 min-h-screen overflow-x-hidden antialiased;
+    /* Soft gradient background */
+    background: radial-gradient(circle at top left, #1e293b, #0f172a);
+    background-attachment: fixed;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/10 backdrop-blur-md border border-white/15 shadow-xl;
+  }
+  .glass-dark {
+    @apply bg-black/20 backdrop-blur-lg border border-white/10 shadow-2xl;
+  }
+  .text-glow {
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+}
+
+/* Hide scrollbar for clean app-like feel */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-tap-highlight-color: transparent;
+}
